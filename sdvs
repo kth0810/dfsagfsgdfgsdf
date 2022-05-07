@@ -1,0 +1,123 @@
+# def board(y,z,aa):
+#     print("%d I %d I %d\n- I - I -\n%d I %d I %d\n- I - I -\n%d I %d I %d" %(y[0], y[1], y[2], z[0], z[1], z[2], aa[0], aa[1], aa[2]))
+#
+# def gamewin(y,z,aa,ab):
+#     if y[:-1] == 0:
+#         ab += 1
+#     elif z[:-1] == 0:
+#         ab += 1
+#     elif aa[:-1] == 0:
+#         ab += 1
+#     elif y[0] == 0 and z[0] == 0 and aa[0] == 0:
+#         ab += 1
+#     elif y[1] == 0 and z[1] == 0 and aa[1] == 0:
+#         ab += 1
+#     elif y[2] == 0 and z[2] == 0 and aa[2] == 0:
+#         ab += 1
+#     elif y[0] == 0 and z[1] == 0 and aa[2] == 0:
+#         ab += 1
+#     elif y[2] == 0 and z[1] == 0 and aa[0] == 0:
+#         ab += 1
+#     return ab
+#
+# def gamewin2(y,z,aa,ac):
+#     if y[:-1] == 10:
+#         ac += 1
+#     elif z[:-1] == 10:
+#         ac += 1
+#     elif aa[:-1] == 10:
+#         ac += 1
+#     elif y[0] == 10 and z[0] == 10 and aa[0] == 10:
+#         ac += 1
+#     elif y[1] == 10 and z[1] == 10 and aa[1] == 10:
+#         ac += 1
+#     elif y[2] == 10 and z[2] == 10 and aa[2] == 10:
+#         ac += 1
+#     elif y[0] == 10 and z[1] == 10 and aa[2] == 10:
+#         ac += 1
+#     elif y[2] == 10 and z[1] == 10 and aa[0] == 10:
+#         ac += 1
+#     return ac
+#
+# def gamestart(y,z,aa):
+#     d = int(input("선택하실 숫자를 입력해주세요.:"))
+#     for j in range(10):
+#         if j < 3:
+#             if y[j] == d:
+#                 y[j] = 0
+#                 print("%d I %d I %d\n- I - I -\n%d I %d I %d\n- I - I -\n%d I %d I %d" % (
+#                 y[0], y[1], y[2], z[0], z[1], z[2], aa[0], aa[1], aa[2]))
+#         elif j < 6:
+#             for p in range(3):
+#                 if z[p] == d:
+#                     z[p] = 0
+#                     print("%d I %d I %d\n- I - I -\n%d I %d I %d\n- I - I -\n%d I %d I %d" % (
+#                     y[0], y[1], y[2], z[0], z[1], z[2], aa[0], aa[1], aa[2]))
+#         elif j > 5:
+#             for q in range(3):
+#                 if aa[q] == d:
+#                     aa[q] = 0
+#                     print("%d I %d I %d\n- I - I -\n%d I %d I %d\n- I - I -\n%d I %d I %d" % (
+#                     y[0], y[1], y[2], z[0], z[1], z[2], aa[0], aa[1], aa[2]))
+# def gamestart2(y,z,aa):
+#     import random
+#     r = random.randrange(1,9)
+#     if r == 1:
+#         y[0] = 10
+#     elif r == 2:
+#         y[1] = 10
+#     elif r == 3:
+#         y[2] = 10
+#     elif r == 4:
+#         z[0] = 10
+#     elif r == 5:
+#         z[1] = 10
+#     elif r == 6:
+#         z[2] = 10
+#     elif r == 7:
+#         aa[0] = 10
+#     elif r == 8:
+#         aa[1] = 10
+#     elif r == 9:
+#         aa[2] = 10
+#     print("%d I %d I %d\n- I - I -\n%d I %d I %d\n- I - I -\n%d I %d I %d" % (
+#     y[0], y[1], y[2], z[0], z[1], z[2], aa[0], aa[1], aa[2]))
+#
+# l = [1, 2, 3]
+# l2 = [4,5,6]
+# l3 = [7,8,9]
+#
+# while True:
+#     f = open('zzz.txt', 'r')
+#     a = input("아이디와 비밀번호를 입력하십시요:")
+#     if f.readline() == a:
+#         x = input("게임을 시작하시겠습니까?(예/아니요):")
+#         if x == "예":
+#                 c = 0
+#                 f = 0
+#                 while True:
+#                     board(l, l2, l3)
+#                     gamestart(l, l2, l3)
+#                     c = gamewin(l, l2, l3,c)
+#                     if c == 1:
+#                         print("a님이 이기셨습니다.")
+#                         break
+#                     gamestart2(l, l2, l3)
+#                     f = gamewin2(l, l2, l3,f)
+#                     if f == 1:
+#                         print("b님이 이기셨습니다.")
+#                         break
+#         elif x == "아니요":
+#                 break
+#     else:
+#         break
+# f.close()
+
+# import random
+# l = []
+# a = int(input())
+# for i in range(a):
+#     b = random.randrange(-1000, 1000)
+#     l.append(b)
+# print(l)
+# max(sum(l))
