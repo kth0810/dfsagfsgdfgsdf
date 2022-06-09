@@ -1,0 +1,44 @@
+class QueueElement:
+#     def __init__(self,data,next):
+#         self.data = data
+#         self.next = next
+# 
+# class Queue:
+#     def __init__(self):
+#         self.rear = None
+#         self.front = None
+# 
+#     def enqueue(self,data):
+#         if self.front is None:
+#             elem = QueueElement(data,None)
+#             self.front = elem
+#             self.rear = elem
+#         else:
+#             elem = QueueElement(data,None)
+#             self.rear.next = elem
+#             self.rear = elem
+# 
+#     def dequeue(self):
+#         if self.front is None:
+#             return None
+#         else:
+#             temp = self.front
+#             self.front = temp.next
+#             return temp.data
+# 
+#     def reverse(self):
+#         p = None
+#         c = self.front
+#         while c:
+#             n = c.next
+#             c.next = p
+#             p = c
+#             c = n
+#         self.rear,self.front = self.front,self.rear
+# 
+# que = Queue()
+# for i in range(1,11):
+#     que.enqueue(i)
+# que.reverse()
+# for i in range(10):
+#     print(que.dequeue())
