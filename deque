@@ -1,0 +1,65 @@
+class DequeElement:
+#     def __init__(self,data,left,right):
+#         self.data = data
+#         self.left = left
+#         self.right = right
+# 
+# 
+# class Deque:
+#     def __init__(self):
+#         self.rear = None
+#         self.front = None
+# 
+#     def insert_rear(self,data):
+#         if self.rear is None:
+#             elem = DequeElement(data,None,None)
+#             self.rear = self.front = elem
+#         else:
+#             elem = DequeElement(data,None,self.rear)
+#             self.rear.left = elem
+#             self.rear = elem
+# 
+#     def insert_front(self,data):
+#         if self.rear is None:
+#             elem = DequeElement(data,None,None)
+#             self.rear = self.front = elem
+#         else:
+#             elem = DequeElement(data,self.front,None)
+#             self.front.right = elem
+#             self.front = elem
+# 
+#     def delete_rear(self):
+#         if self.rear is None:
+#             return None
+#         temp = self.rear.data
+#         if self.rear == self.front:
+#             self.rear = self.front = None
+#         else:
+#             self.rear = self.rear.right
+#         return temp
+# 
+#     def delete_front(self):
+#         if self.front is None:
+#             return None
+#         temp = self.front.data
+#         if self.rear == self.front:
+#             self.rear = self.front = None
+#         else:
+#             self.front = self.front.left
+#         return temp
+# 
+#     def reverse(self):
+#         c = self.front
+#         while c:
+#             c.left,c.right = c.right,c.left
+#             c = c.right
+#         self.rear,self.front = self.front,self.rear
+# 
+# deq = Deque()
+# for i in range(1,6):
+#     deq.insert_rear(i)
+# for i in range(6,11):
+#     deq.insert_front(i)
+# deq.reverse()
+# for i in range(10):
+#     print(deq.delete_front())
