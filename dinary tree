@@ -1,0 +1,93 @@
+class TreeNode:
+#     def __init__(self,data,left,right):
+#         self.data = data
+#         self.left = left
+#         self.right = right
+# 
+# class Binary_tree:
+#     def __init__(self):
+#         self.root = None
+# 
+#     def insert(self,data):
+#         node = TreeNode(data,None,None)
+#         if self.root is None:
+#             self.root = node
+#         else:
+#             curr = self.root
+#             while curr:
+#                 if curr.data > data:
+#                     if curr.left is None:
+#                         data = curr.left
+#                         curr = curr.left
+#                     else:
+#                         curr = curr.left
+#                 else:
+#                     if curr.right is None:
+#                         data = curr.right
+#                         curr = curr.right
+#                     else:
+#                         curr = curr.left
+#     def find(self,data):
+#         if self.root is None:
+#             return None
+#         else:
+#             curr = self.root
+#             while curr:
+#                 if curr.data == data:
+#                     return True
+#                 elif curr.data > data:
+#                     curr = curr.left
+#                 else:
+#                     curr = curr.right
+#             return False
+#     def delete(self,data):
+#         curr = self.root
+#         pcurr = self.root
+#         while curr:
+#             if curr.data == data:
+#                 if curr.left is None and curr.right is None:
+#                     if pcurr.left == curr:
+#                         pcurr.left = None
+#                     else:
+#                         pcurr.right = None
+#                 elif curr.left is None and curr.right is not None:
+#                     if pcurr.left == curr:
+#                         pcurr.left = curr.right
+#                     else:
+#                         pcurr.right = curr.right
+#                 elif curr.left is not None and curr.right is None:
+#                     if pcurr.left == curr:
+#                         pcurr.left = curr.left
+#                     else:
+#                         pcurr.right = curr.left
+#                 else:
+#                     retdata = curr.left
+#                     pretdata = curr
+#                     while retdata.right:
+#                             pretdata = retdata
+#                             retdata = retdata.right
+#                     curr.data = retdata.data
+#                     pretdata.right = retdata.left
+#             elif curr.data > data:
+#                 pcurr = curr
+#                 curr = curr.left
+#             else:
+#                 pcurr = curr
+#                 curr = curr.right
+# 
+#     def preorder(self,node):
+#         if node is not None:
+#             print(node.data, end='->')
+#             self.preorder(node.left)
+#             self.preorder(node.right)
+#     def inorder(self,node):
+#         if node is not None:
+#             self.inorder(node.left)
+#             print(node.data, end='->')
+#             self.inorder(node.right)
+#                 
+#     def postorder(self,node):
+#         if node is not None:
+#             self.postorder(node.left)
+#             self.postorder(node.right)
+#             print(node.data, end='->')
