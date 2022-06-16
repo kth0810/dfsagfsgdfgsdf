@@ -1,0 +1,33 @@
+# def binary_search(array,data):
+#     left = 0
+#     right = len(array)-1
+#     while left<=right:
+#         mid = right + left //2
+#         if array[mid]== data:
+#             return True
+#         elif array[mid] < data:
+#             left = mid + 1
+#         elif array[mid] > data:
+#             right = mid - 1
+#     return False
+
+# n = int(input())
+# a = input().split()
+# for i in range(len(a)):
+#     a[i] = int(a[i])
+# b = int(input())
+# c = input().split()
+# for i in range(len(c)):
+#     c[i] = int(c[i])
+# for i in range(b):
+#     print(binary_search(a,c[i]))
+
+# l = []
+# n = int(input())
+# n_list = input()
+# print(n_list)
+# n_list = n_list.split()
+# for i in range(n):
+#     print(i)
+    # l.append(int(n_list[i]))
+    # print(l)
