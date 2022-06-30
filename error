@@ -1,0 +1,42 @@
+# a,b,c = map(int,input().split())
+# # matrix = [[0]*a]*a
+# # arr=[]
+# # for i in range(b):
+# #     d=input()
+# #     arr.append(d)
+# #
+# # for j in arr:
+# #     x,y = j.split()
+# #     x= int(x)
+# #     y = int(y)
+# #     matrix[x-1][y-1] = 1
+# # print(matrix)
+# 
+# 
+# matrix = [[1,1,1,1],[1,1,0,1],[1,0,1,1],[1,1,1,1]]
+# visit = [False]*len(matrix)
+# # DFS(깊이 우선 탐색)
+# # vertex: 현재 정점, matrix:인접행렬, visit: 방문한 정점 표시
+# def dfs(vertex,matrix,visit):
+#     visit[vertex] = True
+#     print("정점",vertex,"방문")
+#     for i in range(len(matrix)):
+#         if visit[i] == False and matrix[vertex][i] == 1:
+#             dfs(i,matrix,visit)
+# 
+# dfs(0,matrix,visit)
+# 
+# 
+# def bfs(vertex,matrix):
+#     Que = []
+#     visit = [False] * len(matrix)
+#     Que.append(vertex)
+#     visit[vertex] = True
+#     while Que:
+#         curr = Que.pop(0)
+#         print("정점",curr, "방문")
+#         for i in range(len(matrix)):
+#             if visit[i] is False and matrix[curr][i] == 1:
+#                 Que.append(i)
+#                 visit[i] = True
+# bfs(0,matrix)
