@@ -1,0 +1,150 @@
+# def solution(p):
+#     if p == "":
+#         return p
+#     l = []
+#     for i in p:
+#         if len(l) == 0:
+#             l.append(i)
+#         else:
+#             if l[-1] == "(" and i == ")":
+#                 l.pop()
+#             else:
+#                 l.append(i)
+#     if len(l) == 0:
+#         return p
+#     u,v,a,b = "","",0,0
+#     for i in p:
+#         if u == "":
+#             u = u+i
+#             if i == "(":
+#                 a += 1
+#             else:
+#                 b += 1
+#         else:
+#             if a == b:
+#                 v = v+i
+#             elif i == "(":
+#                 u = u+i
+#                 a += 1
+#             elif i == ")":
+#                 u = u+i
+#                 b += 1
+#     print(u)
+#     print(a)
+#     print(b)
+#     l2 = []
+#     for i in u:
+#         if len(l2) == 0:
+#             l2.append(i)
+#         else:
+#             if l2[-1] == "(" and i == ")":
+#                 l2.pop()
+#             else:
+#                 l2.append(i)
+#     if len(l2) == 0:
+#         print("546")
+#         print(u+solution(v))
+#         return u + solution(v)
+#     else:
+#         c = ""
+#         c = "(" + solution(v) + ")"
+#         print(c)
+#         u = u[1:-1]
+#         print(u)
+#         for i in u:
+#             if i == "(":
+#                 c = c + ")"
+#                 print(c)
+#             else:
+#                 c = c + "("
+#                 print(c)
+#     return c
+# print(solution("()))((()"))
+
+# def balance(s):
+#     if s == "":
+#         return False
+#     return s.count("(") == s.count(")")
+# def correct(s):
+#     stack = [""]
+#     for ch in s:
+#         if ch == "(":
+#             stack.append(ch)
+#         elif ch == ")" and stack[-1] == "(":
+#             stack.pop()
+#         else:
+#             return False
+#     return len(stack) == 1
+# def solution(p):
+#     if p == "" or correct(p):
+#         return p
+#     i = 0
+#     while not balance(p[:i]):
+#         i += 2
+#     u = p[:i]
+#     v = p[i:]
+#
+#     if correct(u):
+#         return u + solution(v)
+#     else:
+#         answer = "(" + solution(v) + ")"
+#         for ch in u[1:-1]:
+#             if ch == "(":
+#                 answer += ")"
+#             else:
+#                 answer += "("
+#     return answer
+
+# def solution(rows, columns, queries):
+#     l = [[]]*rows*columns
+#     l2 = []
+#     print(l)
+#     for i in range(1,rows*columns+1):
+#         l[i-1] = i
+#     for i in range(int(len(l)/rows)):
+#         l2.append(l[:columns])
+#         l = l[columns:]
+#     print(l2)
+#     while queries:
+#         x1,y1,x2,y2 = queries[0][0]-1,queries[0][1]-1,queries[0][2]-1,queries[0][3]-1
+#         a = 0
+#
+#         print(l3)
+#         break
+#     answer = []
+#     return answer
+# print(solution(6,6,[[2,2,5,4],[3,3,6,6],[5,1,6,3]]))
+
+# def rotate(matrix,x1,y1,x2,y2):
+#     min_v = 100*100
+#     last = matrix[x1][y1]
+# 
+#     for xn in range(x1,x2):
+#         matrix[xn][y1] = matrix[xn+1][y1]
+#         min_v = min(min_v,matrix[xn+1][y1])
+#     for yn in range(y1,y2):
+#         matrix[x2][yn] = matrix[x2][yn+1]
+#         min_v = min(min_v,matrix[x2][yn+1])
+#     for xn in range(x2-1,x1-1,-1):
+#         matrix[xn+1][y2] = matrix[xn][y2]
+#         min_v = min(min_v,matrix[xn][y2])
+#     for yn in range(y2-1,y1,-1):
+#         matrix[x1][yn+1] = matrix[x1][yn]
+#         min_v = min(min_v,matrix[x1][yn])
+# 
+#     matrix[x1][y1+1] = last
+#     min_v = min(min_v, last)
+#     return min_v
+# 
+# def solution(rows,columns,queries):
+#     matrix = [[0]*(columns + 1) for _ in range(rows+1)]
+# 
+#     for x in range(1,rows+1):
+#         for y in range(1, columns+1):
+#             matrix[x][y] = columns * (x-1) + y
+# 
+#     answer = []
+#     for query in queries:
+#         x1,y1,x2,y2 = query
+#         answer.append(rotate(matrix,x1,y1,x2,y2))
+#     return answer
