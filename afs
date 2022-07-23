@@ -1,0 +1,168 @@
+# class list([iterable])
+# 함수가 아닌 형식(type).
+# 입력받은 iterable 객체를 리스트로 변환한다.
+
+# print(list((1,2,3))) # 튜플을 리스트로
+# print(list({"1" : 1,"2" : 2})) #딕셔너리를 리스트로
+# print({"1":1, "2":2}.values()) #딕셔너리 값만 가녀오기
+# print({"1":1,"2":2}.keys()) #딕셔너리 키만 가져오기
+# print(list({1,2,3})) # 집합을 리스트로
+# print(list(range(4))) # range 시퀀스를 리스트로
+
+# class set([iterable])
+# 함수가 아니 형식.
+# 입력 받은 iterable 객체를 set 으로 변환.
+
+# print(set([1,2,2,3])) # 리스트를 집합으로 변환
+# print(set((1,2,2,3))) # 튜플을 집합으로 변환
+# print(set(range(4)))  # range 시퀀스를 집합으로 변환
+# print(set({"1":1,"2":2})) # 딕셔너리를 집합으로 변환
+
+# class tuple([iterable])
+# 함수가 아닌 형식
+# 입력 받은 iterable 객체를 tuple 로 변환.
+# tuple 은 immutable(불변) 객체
+
+# print(tuple([1,2,3])) # 리스트를 튜플로
+# print(tuple({1,2,3})) # 집합을 튜플로
+# print(tuple({"1":1,"2":2})) # 딕셔너리를 튜플로
+# print(tuple(range(4))) # range 시퀀스를 튜플로
+
+# class range(stop)
+# class range(start, stop [,step])
+# 함수가 아닌 형식.
+# 1. stop 만 입력한 경우: 0 부터 stop - 1 까지의 시퀀스 생성
+# 2. start, stop 입력한 경우: start 부터 stop - 1 까지의 시퀀스 생성
+#   2-1. 추가로 step 입력한 경우: start ~ stop - 1 까지 step 씩 시퀀스 생성
+
+# print(list(range(4)))         # stop 만 입력
+# print(list(range(1, 4)))      # start, stop 입력
+# print(list(range(1, 4, 2)))   # 추가로 step 입력
+
+# function filter(function, iterable)
+
+# [1,2,3,4,5,6,7,8,9,10] 중 홀수만 뽑아서 리스트로 생성하시오?
+# def mmm(l):
+#     l2 = []
+#     for i in l:
+#         if i%2 == 0:
+#             pass
+#         else:
+#             l2.append(i)
+#     return l2
+# print(mmm([1,2,3,4,5,6,7,8,9,10]))
+
+# 위의 함수를 filter 를 사용해서 표현하면?
+# 2개의 인자가 필요함 function, iterable
+# function은 요소를 선택하는 조건(true/false)을 알려줘야 함
+# def condition(item):
+#     return item % 2 == 1
+
+# result = list(filter(condition, range(1, 11)))
+# print(result)
+
+# 위에서 함수 선언 대신 lambda 표현식을 사용하면?
+# result = list(filter(lambda x: x % 2 == 1, range(1,11)))
+# print(result)
+
+# map(function, iterable, ...)
+
+# range(1,11)을 각각 항목을 문자열로 만들어서 변환한 리스트 생성?
+# def get_str(_list):
+#     l = []
+#     for i in _list:
+#         l.append(str(i))
+#     return l
+
+# 위의 함수를 map 을 활용하여 표현하면?
+# 각가의 시퀀스 요소를 함수를 적용하여 새 시퀀스로 리턴
+# result = list(map(lambda x: str(x), range(1,11)))
+
+# 입력(input) 에서의 활용법
+# _input = input("공백으로 구분하여 수 입력:")
+# result = list(map(int, _input.split()))
+
+# 두 시퀀스의 값을 서로 곱한 새로운 리스트?
+# map은 iterable 요소를 두 개 이상 받을 수 있다.
+# result = list(map(lambda x, y: x*y, range(1,11), range(1,11)))
+# *** 두 시퀀스이 길이가 다르다면 짧은 시퀀스의 길이까지만 실행됨
+# print(result)
+
+# zip(*iterables, strict=FAlse)
+# 두 개 이상의 iterable 객체의 요소들을 짝지어준 새로운 시퀀스 리턴
+
+# a = ['one','two','three','four']
+# b = [1,2,3,4,5,6,7,8]
+
+# result = list(zip(a,b))
+# print(result)
+
+# *** strict=True 인 경우 엄격 모드
+# result = zip(a,b,strict=True)
+# print(list(result))
+
+# enuberate(iterable, start=0)
+# 입력받은 iterable 객체의 요소와 그 순서 번호를 start 부터 짜지은 새로운 시퀀스를 리턴
+
+# a = ['a','b','c','d','e']
+
+# result = list(enumerate(a)) #start 는 0부터 출발
+# print(result)
+
+# zip 으로도 흉내 가능
+# result = list(zip(range(len(a)), a))
+# print(result)
+
+# result = list(enumerate(a, start=3))
+# print(result)
+
+# 선형 탐색 linear search
+
+# _list: 리스트
+# data: 찾고자 하는 값
+# def linear_search(_list, data):
+#     for i, n in enumerate(_list):
+#         if data == n:
+#             return i
+#     return None
+
+import time
+# 이진 탐색 binary search
+# 알고리즘
+# 1. 리스트는 정렬이 되어 있어야 한다.
+# 2. 리스트의 시작과 끝을 left, right로 지정한다.
+# 3. (left + right) // 2를 middle 로 지정한다.
+# 4. middle이 찾고자 하는 값이랑 같으면 해당 위치를 리턴한다.
+# 5. 값이 다른 경우
+#   5-1. middle 보다 찾는 값이 크다. left = middle + 1
+#   5-2. middle 보다 찾는 값이 작다. right = middle - 1
+#   5-3. 위를 수행후 3번부터 다시 수행
+# 6. left > right 가 되는 경우 값을 찾지 못한 것으로 None 을 리턴.
+
+# def binary_search(l,data):
+#     left = 0
+#     right = len(l)-1
+#     while left <= right:
+#         middle = (left + right) // 2
+#         if l[middle] == data:
+#             return middle
+#         elif l[middle] > data:
+#             right = middle -1
+#         else:
+#             left = middle +1
+#     return None
+
+# def linear_search(l,data):
+#     for i,n in enumerate(l):
+#         if data == n:
+#             return i
+#     return None
+
+# a = list(range(10000000))
+
+# start = time.time()
+# print("찾은 위치:", linear_search(a,7500000))
+# print("수행 시간:", time.time() - start)
+# start = time.time()
+# print("찾은 위치:", binary_search(a,7500000))
+# print("수행 시간:", time.time() - start)
