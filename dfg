@@ -1,0 +1,211 @@
+# # # class MyClass:0
+# # # #     i = 12345
+# # # #     def f (self):
+# # # #         return 'hello'
+# # # # print(MyClass.i)
+# # # # print(MyClass.f)
+# # # #
+# # # # x = MyClass() #MyClass의 내용을 기반으로 새로운 MyClass 인스턴스를 생성한다.
+# # # #
+# # # #
+# # # # class Complex:
+# # # #     def __init__(self,real,imagine):
+# # # #         self.r = real
+# # # #         self.i = imagine
+# # # # x = Complex(3.0,-4.5)
+# # # # print(x.r,x.i)
+# # # #
+# # # # x.counter = 1
+# # # # while x.counter < 10:
+# # # #     x.counter = x.counter*2
+# # # # print(x.counter)
+# # # #
+# # # # class MyClass:
+# # # #     i = 12345
+# # # #     def f(self):
+# # # #         return 'hello'
+# # # # x = MyClass()
+# # # # x.f()
+# # # #
+# # # # print(type(MyClass.f))
+# # # # print(type(x.f))
+# # # #
+# # # # xf = x.f
+# # # # print(xf())
+# # # #
+# # # # class Dog:
+# # # #     kind = '진돗개'  # 모든 인스턴스에서 공유되는 클래스 변수
+# # # #
+# # # #     def __init__(self, name):
+# # # #         self.name = name # 각각의 인스턴스별로 고유한 인스턴스 변수
+# # # # a = Dog("백구")
+# # # # b = Dog("뽀삐")
+# # # # print(a.kind == b.kind) # kind는 모든 Dog 클래스 인스턴스에서 공유한다.
+# # # # print(a.name == b.name) # name은 각각의 인스턴스마다 고유한(입력한) 값을 가진다.
+# # #
+# # # # a = [1,2,3]
+# # # # b = a
+# # # # b.append(4)
+# # # # print(a)
+# # # # print(b)
+# # # #
+# # # # class Dog:
+# # # #     tricks = []
+# # # #     def __init__(self,name):
+# # # #         self.name = name
+# # # #     def add_trick(self,trick):
+# # # #         #인스턴스 변수에서 속성을 찾지 못하면 클래스 변수에서 속성을 찾는다.
+# # # #         #여기서는 결국 Dog.tricks를 가리킨다.
+# # # #         self.tricks.append(trick)
+# # # # a = Dog("백구")
+# # # # b = Dog("뽀삐")
+# # # # # 아래 두 문장은 둘다 동일한 tricks에 값을 넣고있다.
+# # # # a.add_trick("구르기")
+# # # # b.add_trick("죽은척 하기")
+# # # # print(a.tricks)
+# # #
+# # #
+# # # # class AAA:
+# # # #     share = 10
+# # # #     def __init__(self,value):
+# # # #         self.unique = value
+# # # # a = AAA(1)
+# # # # b = AAA(2)
+# # # # print(a == b)
+# # # # print(a.unique == b.unique)
+# # # # print(a.share == b.share)
+# # # # AAA.share = 0
+# # # # print(a.share == b.share)
+# # # # a.share = 5
+# # # # print(a.share == b.share)
+# # #
+# # # class person:
+# # #     population = 0
+# # #     def __init__(self,name,number,place):
+# # #         self.name = name
+# # #         self.reg = number
+# # #         self.addr = place
+# # #         person.population += 1
+# # #     def get_name(self):
+# # #         return self.name
+# # #     def set_name(self,name):
+# # #         self.name = name
+# # #     def get_age(self):
+# # #         front, back = self.reg.split("-")
+# # #         birth = 1900
+# # #         if back[0] in "34":
+# # #             birth = 2000
+# # #         birth += int(front[0:2])
+# # #         age = 2022 - birth
+# # #         return age
+# # #     def get_gender(self):
+# # #         front,back = self.reg.split("-")
+# # #         if back[0] in "13":
+# # #             return "male"
+# # #         else:
+# # #             return "female"
+# # #     def get_address(self):
+# # #         return self.addr
+# # #     def set_adress(self,addr):
+# # #         self.addr = addr
+# # #     def get_population(self):
+# # #         return self.population
+# # # a = person("a","650524-1453541","korea")
+# #
+# # class A:
+# #     def a(self):
+# #         return "a"
+# # class B(A):
+# #     def b(self):
+# #         return "b"
+# # class C(B):
+# #     def c(self):
+# #         return "c"
+# # c = C()
+# # print(c.a())
+# #
+# # class Animal:
+# #     def pattern(self):
+# #         print("민무늬")
+# #     def sound(self):
+# #         print("소리 없음")
+# # class Dog(Animal):
+# #     def sound(self):
+# #         print("멍멍")
+# # d = Dog()
+# # d.pattern()
+# # d.sound()
+# #
+# # class Dog(Animal):
+# #     def sound(self):
+# #         Animal.sound(self)
+# #         print("멍멍")
+# # class Dog(Animal):
+# #     def sound(self):
+# #         super().sound()
+# #         print("멍멍")
+# #
+# # class Reverse:
+# #     def __init__(self,data):
+# #         self.data = data
+# #         self.index = len(data)
+# #     def __iter__(self):
+# #         return self
+# #     def __next__(self):
+# #         if self.index == 0:
+# #             raise StopIteration
+# #         self.index = self.index - 1
+# #         return self.data[self.index]
+# # rev = Reverse("Hello")
+# # for char in rev:
+# #     print(char)
+# #
+# # def reverse(data):
+# #     for i in range(len(data)-1,-1,-1):
+# #         yield data[i]
+# # for char in reverse("world"):
+# #     print(char)
+# #
+# # #세 종류의 값을 저장하는 클래스
+# # class Value3:
+# #     def __init__(self,v1,v2,v3):
+# #         self.v1 = v1
+# #         self.v2 = v2
+# #         self.v3 = v3
+# #         self.index = -1
+# #     def __iter__(self):
+# #         def gen_iter(idx):
+# #             yield self.v1
+# #             yield self.v2
+# #             yield self.v3
+# #         return gen_iter()
+# #
+# # value3 = Value3("문자열",1000,("튜플",1))
+# # # 1. in 오른쪾 객체에 대한 iter 메서드 호출
+# # # 2. iterator 객체에서 next 메서드 호출
+# # # 3. 2번을 StopIteration 예외 발생 까지 반복
+# # for i in value3:
+# #     print(i)
+# 
+# # 연산자 오버라이딩(Operator overriding, 연산자 재정의)
+# class Person:
+#     def __init__(self,name):
+#         self.name = name
+#     def print_name(self):
+#         print(self.name)
+#     def __add__(self, other):
+#         new = Marriage(self,other)
+#         return new
+# class Marriage:
+#     def __init__(self,x,y):
+#         self.x = x
+#         self.y=y
+#     def print_familly(self):
+#         print("[가족 구성]")
+#         self.x.print_name()
+#         self.y.print_name()
+# a = Person("철수")
+# b = Person("영희")
+# # a + b -> a.__add__(b)
+# m = a + b
+# m.print_familly()
