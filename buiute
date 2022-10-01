@@ -1,0 +1,83 @@
+# a = input()
+# b = 0
+# c = len(a)-1
+# for i in range(len(a)):
+#     b += int(a[i]) * (2**c)
+#     c -= 1
+# print(b)
+
+# a = int(input())
+# def binery(a):
+#     l = ""
+#     while a >= 1:
+#         l = str(int(a%2)) + l
+#         a = a/2
+#     return l
+# print(binery(a))
+
+# a = input()
+# b = ""
+# for i in a:
+#     if i == "0":
+#         b = b + "1"
+#     else:
+#         b = b + "0"
+# m = 0
+# n = len(b)-1
+# for i in range(len(b)):
+#     m += int(b[i]) * (2**n)
+#     n -= 1
+# m += 1
+# l = ""
+# while m >= 1:
+#     l = str(int(m%2)) + l
+#     m = m/2
+# print(l)
+
+# binary = input()
+# comp1 = ""
+# for bit in binary:
+#     comp1 += "1" if bit == "0" else "0"
+# comp2 = ""
+# carry_bit = 1
+# for bit in reversed(comp1):
+#     if bit == "1" and carry_bit == 1:
+#         comp2 += "0"
+#         carry_bit = 1
+#     elif bit == "0" and carry_bit == 1:
+#         comp2 += "1"
+#         carry_bit = 0
+#     else:
+#         comp2 += bit
+# comp2 = comp2[::-1]
+# print(comp2)
+
+# def binary_to_decimal(binary):
+#     decimal = 0
+#     for i,bit in enumerate(binary[::-1]):
+#         decimal += int(bit) * (2**i)
+#     return decimal
+# def twos_complement(binary):
+#     comp1 = ""
+#     for bit in binary:
+#         comp1 += "1" if bit == "0" else "0"
+#     comp2 = ""
+#     carry_bit = 1
+#     for bit in reversed(comp1):
+#         if bit == "1" and carry_bit == 1:
+#             comp2 += "0"
+#             carry_bit = 1
+#         elif bit == "0" and carry_bit == 1:
+#             comp2 += "1"
+#             carry_bit = 0
+#         else:
+#             comp2 += bit
+#     return comp2[::-1]
+# binary = input()
+# sign = 1
+# if binary[0] == "1":
+#     binary = twos_complement(binary)
+#     sign = -1
+# decimal = binary_to_decimal(binary)
+# decimal = decimal*sign
+# print(decimal)
