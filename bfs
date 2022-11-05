@@ -1,0 +1,17 @@
+# from collections import deque
+# def BFS(matrix, start_node):
+#     visit = [False] * len(matrix)
+#     queue = deque()
+#     queue.append(start_node)
+#     visit[start_node] = True
+#     print('방문',start_node)
+#     while queue:
+#         node = queue.popleft()
+#         for next_node in range(len(matrix)):
+#             if matrix[node][next_node] == 1:
+#                 if not visit[next_node]:
+#                     queue.append(next_node)
+#                     visit[next_node] = True
+#                     print("방문", next_node)
+# amatrix = [[0,1,0,1,0],[1,0,1,0,0],[0,1,0,1,1],[1,0,1,0,0],[0,0,1,0,0]]
+# BFS(amatrix,0)
